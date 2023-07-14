@@ -103,10 +103,9 @@
     <li>[✅] Contact</li>
     <li>[✅] Footer</li>
     <li>[✅] Dark Mode</li>
-    <li>[✅] Responsividade telas min: 1200px</li>
+    <li>[✅] Responsividade telas min: 767px</li>
     <li>[✅] Responsividade telas min: 992px</li>
-    <li>[ ] Responsividade telas min: 1023px</li>
-    <li>[ ] Responsividade telas min: 767px</li>
+    <li>[✅] Responsividade telas min: 1200px</li>
   </ul>
 </div>
 
