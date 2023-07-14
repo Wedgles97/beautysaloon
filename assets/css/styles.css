@@ -1,3 +1,47 @@
+/*======= VARIABLES =======*/
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 159;
+  /* HSL color mode light */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+  --box-shadow: rgba(0, 0, 0, 0.08);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: "Poppins", sans-serif;
+  --body-font: "DM Sans", sans-serif;
+}
+
+/* dark-mode */
+:root.dark-mode {
+  /* HSL color mode dark */
+  --base-color: hsl(var(--hue) 36% 27%);
+  --base-color-second: hsl(var(--hue) 65% 38%);
+  --base-color-alt: hsl(var(--hue) 57% 33%);
+  --title-color: hsl(var(--hue) 41% 90%);
+  --text-color: hsl(0 0% 80%);
+  --body-color: hsl(0 0% 15%);
+  --box-shadow: rgba(255, 255, 255, 0.16);
+}
+
+:root.dark-mode button .moon {
+  display: none;
+}
+
+:root.dark-mode button .sun {
+  display: block;
+}
+
 /*======= RESET =======*/
 * {
   margin: 0;
@@ -22,38 +66,6 @@ button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
-}
-
-/*======= VARIABLES =======*/
-:root {
-  --header-height: 4.5rem;
-
-  /* colors */
-  --hue: 159;
-  /* HSL color mode light */
-  --base-color: hsl(var(--hue) 36% 57%);
-  --base-color-second: hsl(var(--hue) 65% 88%);
-  --base-color-alt: hsl(var(--hue) 57% 53%);
-  --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(0 0% 46%);
-  --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 98%);
-
-  /* HSL color mode dark */
-  --base-color-dark: hsl(var(--hue) 36% 27%);
-  --base-color-second-dark: hsl(var(--hue) 65% 38%);
-  --base-color-alt-dark: hsl(var(--hue) 57% 33%);
-  --title-color-dark: hsl(var(--hue) 41% 90%);
-  --text-color-dark: hsl(0 0% 80%);
-  --text-color-dark: hsl(0 0% 98%);
-  --body-color-dark: hsl(0 0% 15%);
-
-  /* fonts */
-  --title-font-size: 1.875rem;
-  --subtitle-font-size: 1rem;
-
-  --title-font: "Poppins", sans-serif;
-  --body-font: "DM Sans", sans-serif;
 }
 
 /*======= BASE =======*/
@@ -222,10 +234,6 @@ nav .menu ul {
   display: none;
 }
 
-nav light-mode {
-  border: 0;
-}
-
 button .sun {
   display: none;
 }
@@ -248,16 +256,17 @@ nav.show .menu {
   place-content: center;
 }
 
-nav.show .menu button {
-  display: none;
-}
-
 nav.show .menu ul {
   display: grid;
 }
 
 nav.show ul.grid {
   gap: 4rem;
+}
+
+nav.show button img {
+  width: 30px;
+  height: 30px;
 }
 
 /* toggle menu */
@@ -334,7 +343,7 @@ nav.show div.icon-close {
 
 /*======= ABOUT =======*/
 #about {
-  background: white;
+  background: var(--body-color);
 }
 
 #about .container {
@@ -377,7 +386,7 @@ nav.show div.icon-close {
 
 .card {
   padding: 3.625rem 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 12px var(--box-shadow);
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
@@ -397,7 +406,7 @@ nav.show div.icon-close {
 
 /*======= TESTIMONIALS =======*/
 #testimonials {
-  background: white;
+  background: var(--body-color);
 }
 
 #testimonials .container {
@@ -413,7 +422,7 @@ nav.show div.icon-close {
 
 #testimonials blockquote {
   padding: 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 12px var(--box-shadow);
   border-radius: 0.25rem;
 }
 
@@ -697,139 +706,3 @@ footer .social a:hover {
   }
 }
 /* medium devices: 767 > */
-
-/* darkmode  */
-body.light-mode {
-  background-color: var(--body-color-dark);
-  color: var(--text-color);
-  transition: all 0.3s ease-in;
-}
-
-body.light-mode .title {
-  color: var(--text-color-dark);
-}
-
-body.light-mode .button {
-  background-color: var(--base-color-dark);
-  color: var(--text-color-dark);
-}
-
-body.light-mode .button:hover {
-  background: var(--base-color-alt-dark);
-}
-
-body.light-mode .section header strong {
-  color: var(--base-color-dark);
-}
-
-body.light-mode #header {
-  background-color: var(--body-color-dark);
-}
-
-body.light-mode .logo {
-  color: var(--title-color-dark);
-}
-
-body.light-mode .logo span {
-  color: var(--base-color-dark);
-}
-
-body.light-mode .logo-alt span {
-  color: var(--body-color-dark);
-}
-
-body.light-mode nav ul li a:hover,
-body.light-mode nav ul li a.active {
-  color: var(--base-color-dark);
-}
-
-body.light-mode nav ul li a::after {
-  background: var(--base-color-dark);
-}
-
-body.light-mode nav.show .menu {
-  background: var(--body-color-dark);
-}
-
-body.light-mode button .moon {
-  display: none;
-}
-
-body.light-mode button .sun {
-  display: block;
-}
-
-body.light-mode .toggle {
-  color: var(--base-color-dark);
-}
-
-/* home */
-body.light-mode #home .image::before {
-  background: var(--base-color-second-dark);
-}
-
-/* about */
-body.light-mode #about {
-  background: black;
-}
-
-body.light-mode #about .image::before {
-  background: var(--base-color-second-dark);
-}
-
-/* services */
-body.light-mode .card {
-  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.08);
-  border-bottom: 0.25rem solid var(--base-color-dark);
-}
-
-body.light-mode .card i {
-  color: var(--base-color-dark);
-}
-
-/* testimonials */
-body.light-mode #testimonials {
-  background: black;
-}
-
-body.light-mode #testimonials blockquote {
-  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.08);
-}
-
-body.light-mode #testimonials blockquote p {
-  color: var(--title-color-dark);
-}
-
-body.light-mode #testimonials blockquote p span {
-  color: var(--base-color-dark);
-}
-
-body.light-mode .swiper-pagination-bullet {
-  background: var(--base-color-dark);
-}
-
-body.light-mode .swiper-pagination-bullet-active {
-  background: var(--base-color-dark);
-}
-
-/* contact */
-body.light-mode #contact ul li i {
-  color: var(--base-color-dark);
-}
-/* footer */
-body.light-mode footer {
-  background: var(--base-color-dark);
-}
-
-body.light-mode footer .brand p {
-  color: var(--text-color-dark);
-}
-
-body.light-mode footer i {
-  color: var(--text-color-dark);
-}
-
-body.light-mode .back-to-top {
-  background: var(--base-color-dark);
-  color: var(--text-color-dark);
-}

@@ -1,8 +1,8 @@
 // Light and dark mode
-const modeBtn = document.querySelector("#light-mode");
+const modeBtn = document.querySelector("#dark-mode");
 
 modeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
+  document.documentElement.classList.toggle("dark-mode");
 });
 
 /* abre e fecha o menu quando clicar no icone: hamburguer e X */
